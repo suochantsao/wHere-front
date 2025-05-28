@@ -11,12 +11,12 @@ jobs:
     steps:
       - name: Send Discord Notification for Push
         if: github.event_name == 'push'
-        uses: appleboy/discord-action@v4
+        uses: appleboy/discord-action@v1.2.0
         with:
           webhook_id: ${{ secrets.DISCORD_WEBHOOK_ID }}
           webhook_token: ${{ secrets.DISCORD_WEBHOOK_TOKEN }}
           color: "#48f442"
-          username: "GitHub"
+          username: "The Lab Bot"
           message: |
             🚀 **New Push to Repository**
             
@@ -29,12 +29,12 @@ jobs:
 
       - name: Send Discord Notification for Pull Request
         if: github.event_name == 'pull_request'
-        uses: appleboy/discord-action@v4
+        uses: appleboy/discord-action@v1.2.0
         with:
           webhook_id: ${{ secrets.DISCORD_WEBHOOK_ID }}
           webhook_token: ${{ secrets.DISCORD_WEBHOOK_TOKEN }}
           color: "#4285f4"
-          username: "GitHub"
+          username: "The Lab Bot"
           message: |
             🔄 **Pull Request ${{ github.event.action }}**
             
