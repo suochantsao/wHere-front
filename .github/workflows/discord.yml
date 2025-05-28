@@ -17,15 +17,7 @@ jobs:
           webhook_token: ${{ secrets.DISCORD_WEBHOOK_TOKEN }}
           color: "#48f442"
           username: "GitHub"
-          message: |
-            🚀 **New Push to Repository**
-            
-            **Repository:** ${{ github.repository }}
-            **Branch:** ${{ github.ref_name }}
-            **Author:** ${{ github.event.head_commit.author.name }}
-            **Commit:** ${{ github.event.head_commit.message }}
-            
-            [View Changes](${{ github.event.head_commit.url }})
+          message: "🎉 New update on ${{ github.ref_name }}/${{ github.repository }} !\n\n**${{ github.event.head_commit.message }}**\n\n by ${{ github.event.head_commit.author.name }}. [View Changes](${{ github.event.head_commit.url }})"
 
       - name: Send Discord Notification for Pull Request
         if: github.event_name == 'pull_request'
