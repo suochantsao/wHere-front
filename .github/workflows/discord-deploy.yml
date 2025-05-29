@@ -12,7 +12,7 @@ jobs:
         id: await-vercel
         with:
           deployment-token: ${{ secrets.VERCEL_TOKEN }}
-          timeout: 300
+          timeout: 240
           
       - name: Send Discord Notification for Successful Deployment
         if: steps.await-vercel.outputs.deployment-status == 'READY'
