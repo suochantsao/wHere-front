@@ -7,26 +7,39 @@ jobs:
   wait-and-notify:
     runs-on: ubuntu-latest
     steps:
+      - name: Get Vercel Deployment URL
+        id: get-url
+        run: |
+          # 透過 Vercel API 獲取最新的部署 URL
+          DEPLOYMENTS=$(curl -s -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" \
+            "https://api.vercel.com/v6/deployments?limit=1&projectId=${{ secrets.VERCEL_PROJECT_ID }}")
+          
+          DEPLOYMENT_URL=$(echo $DEPLOYMENTS | jq -r '.deployments[0].url')
+          echo "deployment_url=$DEPLOYMENT_URL" >> $GITHUB_OUTPUT
+        
       - name: Wait for Vercel Deployment
         uses: UnlyEd/github-action-await-vercel@v1.2.36
         id: await-vercel
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
         with:
-          deployment-token: ${{ secrets.VERCEL_TOKEN }}
-          timeout: 240
+          deployment-url: ${{ steps.get-url.outputs.deployment_url }}
+          timeout: 300
+          poll-interval: 5
           
-      - name: Send Discord Notification for Successful Deployment
-        if: steps.await-vercel.outputs.deployment-status == 'READY'
+      - name: Send Discord Notification
+        if: fromJson(steps.await-vercel.outputs.deploymentDetails).readyState == 'READY'
         uses: appleboy/discord-action@v1.2.0
         with:
           webhook_id: ${{ secrets.DISCORD_WEBHOOK_ID }}
           webhook_token: ${{ secrets.DISCORD_WEBHOOK_TOKEN }}
           color: "#00d26a"
-          username: "Vercel Deployment"
+          username: "Vercel"
           message: |
             🚀 **Deployment Complete!** ✨
             
             **Branch:** ${{ github.ref_name }}
-            **URL:** ${{ steps.await-vercel.outputs.deployment-url }}
+            **URL:** https://${{ fromJson(steps.await-vercel.outputs.deploymentDetails).url }}
             **By:** ${{ github.actor }}
             **Commit:** ${{ github.event.head_commit.message }}
             
