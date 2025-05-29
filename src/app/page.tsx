@@ -1,25 +1,41 @@
-const Feature = ({ title, description }) => (
-    <div className="text-center px-4">
-      <h3 className="font-semibold">{title}</h3>
-      <p className="text-sm text-gray-600">{description}</p>
-    </div>
+interface FeatureProps {
+  title: string;
+  description: string;
+}
+
+interface StepProps {
+  number: string;
+  title: string;
+}
+
+interface TestimonialProps {
+  name: string;
+  role: string;
+  quote: string;
+}
+
+const Feature = ({ title, description }: FeatureProps) => (
+  <div className="text-center px-4">
+    <h3 className="font-semibold">{title}</h3>
+    <p className="text-sm text-gray-600">{description}</p>
+  </div>
 );
 
-const Step = ({ number, title }) => (
-    <div className="text-center">
-      <div className="w-10 h-10 rounded-full bg-gray-200 mx-auto mb-2 flex items-center justify-center font-bold">
-        {number}
-      </div>
-      <p className="text-sm font-medium">{title}</p>
+const Step = ({ number, title }: StepProps) => (
+  <div className="text-center">
+    <div className="w-10 h-10 rounded-full bg-gray-200 mx-auto mb-2 flex items-center justify-center font-bold">
+      {number}
     </div>
+    <p className="text-sm font-medium">{title}</p>
+  </div>
 );
 
-const Testimonial = ({ name, role, quote }) => (
-    <div className="bg-gray-100 p-4 rounded shadow text-sm">
-      <p className="mb-2">{quote}</p>
-      <p className="font-semibold">{name}</p>
-      <p className="text-gray-500">{role}</p>
-    </div>
+const Testimonial = ({ name, role, quote }: TestimonialProps) => (
+  <div className="bg-gray-100 p-4 rounded shadow text-sm">
+    <p className="mb-2">{quote}</p>
+    <p className="font-semibold">{name}</p>
+    <p className="text-gray-500">{role}</p>
+  </div>
 );
 
 export default function Home() {
