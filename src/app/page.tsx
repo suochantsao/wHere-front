@@ -1,4 +1,3 @@
-import icon from '@/app/favicon.ico'
 const Feature = ({ title, description }) => (
     <div className="text-center px-4">
       <h3 className="font-semibold">{title}</h3>
