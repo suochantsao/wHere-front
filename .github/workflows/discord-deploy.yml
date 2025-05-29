@@ -1,4 +1,4 @@
-name: Deployment Discord Notification with Wait
+name: Deployment Discord Notification
 on:
   push:
     branches: [main, uat, dev]
@@ -12,7 +12,7 @@ jobs:
         id: await-vercel
         with:
           deployment-token: ${{ secrets.VERCEL_TOKEN }}
-          timeout: 300 # 5 分鐘超時
+          timeout: 300
           
       - name: Send Discord Notification for Successful Deployment
         if: steps.await-vercel.outputs.deployment-status == 'READY'
