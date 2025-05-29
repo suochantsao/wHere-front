@@ -1,0 +1,50 @@
+name: Deployment Discord Notification with Wait
+on:
+  push:
+    branches: [main, uat, dev]
+
+jobs:
+  wait-and-notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for Vercel Deployment
+        uses: UnlyEd/github-action-await-vercel@v1.2.36
+        id: await-vercel
+        with:
+          deployment-token: ${{ secrets.VERCEL_TOKEN }}
+          timeout: 300 # 5 分鐘超時
+          
+      - name: Send Discord Notification for Successful Deployment
+        if: steps.await-vercel.outputs.deployment-status == 'READY'
+        uses: appleboy/discord-action@v1.2.0
+        with:
+          webhook_id: ${{ secrets.DISCORD_WEBHOOK_ID }}
+          webhook_token: ${{ secrets.DISCORD_WEBHOOK_TOKEN }}
+          color: "#00d26a"
+          username: "Vercel Deployment"
+          message: |
+            🚀 **Deployment Complete!** ✨
+            
+            **Branch:** ${{ github.ref_name }}
+            **URL:** ${{ steps.await-vercel.outputs.deployment-url }}
+            **By:** ${{ github.actor }}
+            **Commit:** ${{ github.event.head_commit.message }}
+            
+            *Ready to visit!* 🎉
+
+      - name: Send Discord Notification for Failed Deployment
+        if: steps.await-vercel.outputs.deployment-status == 'ERROR'
+        uses: appleboy/discord-action@v1.2.0
+        with:
+          webhook_id: ${{ secrets.DISCORD_WEBHOOK_ID }}
+          webhook_token: ${{ secrets.DISCORD_WEBHOOK_TOKEN }}
+          color: "#f85149"
+          username: "Vercel Deployment"
+          message: |
+            ❌ **Deployment Failed!** 
+            
+            **Branch:** ${{ github.ref_name }}
+            **By:** ${{ github.actor }}
+            **Commit:** ${{ github.event.head_commit.message }}
+            
+            Please check the deployment logs.
