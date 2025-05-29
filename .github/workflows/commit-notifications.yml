@@ -1,11 +1,9 @@
-name: Discord Message
+name: Commit & PR Notifications
 on:
   push:
     branches: [main, uat, dev]
   pull_request:
     branches: [main, uat, dev]
-  deployment_status:
-    types: [success, failure]
 
 jobs:
   discord-message:

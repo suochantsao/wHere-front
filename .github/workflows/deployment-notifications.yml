@@ -1,4 +1,4 @@
-name: Deployment Discord Notification
+name: Deployment Notifications
 on:
   push:
     branches: [main, uat, dev]
@@ -10,7 +10,6 @@ jobs:
       - name: Get Vercel Deployment URL
         id: get-url
         run: |
-          # 透過 Vercel API 獲取最新的部署 URL
           DEPLOYMENTS=$(curl -s -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" \
             "https://api.vercel.com/v6/deployments?limit=1&projectId=${{ secrets.VERCEL_PROJECT_ID }}")
           
