@@ -24,8 +24,7 @@ jobs:
         with:
           deployment-url: ${{ steps.get-url.outputs.deployment_url }}
           timeout: 300
-          poll-interval: 5
-          
+
       - name: Send Discord Notification
         if: fromJson(steps.await-vercel.outputs.deploymentDetails).readyState == 'READY'
         uses: appleboy/discord-action@v1.2.0
