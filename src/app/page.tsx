@@ -42,10 +42,10 @@ const Testimonial = ({ name, role, quote }: TestimonialProps) => (
 
 export default function Home() {
   return (
-    <main className="font-sans bg-neutral-300">
+    <main className="font-sans bg-[#DAC9A6]">
       <Header />
       {/* Hero Section */}
-      <section className="grid md:grid-cols-2 gap-8 p-8 items-center">
+      <section className="grid md:grid-cols-2 gap-8 p-8 items-center pt-52">
         <div>
           <h1 className="text-2xl font-bold mb-2">Transform Your Space</h1>
           <p className="mb-4 text-gray-600">
@@ -60,7 +60,7 @@ export default function Home() {
             </button>
           </div>
         </div>
-        <div className="bg-gray-300 h-48 flex items-center justify-center rounded shadow">
+        <div className="bg-gray-200 h-48 flex items-center justify-center rounded shadow">
           Product Image
         </div>
       </section>
