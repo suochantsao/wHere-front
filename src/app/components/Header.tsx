@@ -25,7 +25,7 @@ export default function Header() {
       >
         <h1 className="font-bold text-2xl">wHere</h1>
         <nav className="space-x-4">
-          <a href="/" className="hover:underline">
+          <a href="#" className="hover:underline">
             Home
           </a>
           <a href="#" className="hover:underline">
