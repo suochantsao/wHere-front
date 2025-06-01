@@ -42,28 +42,26 @@ const Testimonial = ({ name, role, quote }: TestimonialProps) => (
 
 export default function Home() {
   return (
-    <main className="font-sans bg-[#DAC9A6]">
-      <Header />
-      {/* Hero Section */}
-      <section className="grid md:grid-cols-2 gap-8 p-8 items-center pt-52">
-        <div>
-          <h1 className="text-2xl font-bold mb-2">Transform Your Space</h1>
-          <p className="mb-4 text-gray-600">
-            Organize smarter, live better with our innovative storage solution.
-          </p>
-          <div className="space-x-2">
-            <button className="bg-black text-white px-4 py-2 rounded">
-              Get Started
-            </button>
-            <button className="bg-gray-200 px-4 py-2 rounded">
-              Learn More
-            </button>
+    <main className="font-sans">
+      <div className="bg-[url('/images/hero-bg.jpg')] bg-cover bg-no-repeat h-screen">
+        <Header />
+        <section className="flex justify-center gap-8 p-8 items-center pt-[35vh]">
+          <div className="text-center">
+            <p className="text-2xl font-bold mb-2">
+              為多地生活的你打造專屬的儲物記錄。
+            </p>
+            <p className="mb-4 text-gray-600">
+              用 wHere，記住每一樣東西放在哪裡，從此不再翻箱倒櫃。
+            </p>
+            <div className="space-x-2 mt-8">
+              <button className="bg-black text-white px-4 py-2 rounded">
+                開始使用
+              </button>
+              <button className="bg-white px-4 py-2 rounded">瞭解更多</button>
+            </div>
           </div>
-        </div>
-        <div className="bg-gray-200 h-48 flex items-center justify-center rounded shadow">
-          Product Image
-        </div>
-      </section>
+        </section>
+      </div>
 
       {/* Features */}
       <section className="grid md:grid-cols-3 gap-6 p-8 bg-gray-50">

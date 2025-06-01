@@ -24,26 +24,23 @@ export default function Header() {
         }`}
       >
         <h1 className="font-bold text-2xl">wHere</h1>
-        <nav className="space-x-4">
-          <a href="#" className="hover:underline">
-            Home
+        <nav className="space-x-4 font-bold space-x-8">
+          <a href="#" className="hover:text-[#DAC9A6]">
+            產品介紹
           </a>
-          <a href="#" className="hover:underline">
-            Product Features
+          <a href="#" className="hover:text-[#DAC9A6]">
+            活動資訊
           </a>
-          <a href="#" className="hover:underline">
-            Discussion Forum
-          </a>
-          <a href="/about" className="hover:underline">
-            About Us
+          <a href="/about" className="hover:text-[#DAC9A6]">
+            關於我們
           </a>
         </nav>
         <div className="space-x-2">
           <button className="text-sm px-3 py-1 border rounded">
-            <a href="/login">Login</a>
+            <a href="/login">登入</a>
           </button>
           <button className="text-sm px-3 py-1 bg-gray-800 text-white rounded">
-            <a href="/register">Register</a>
+            <a href="/register">註冊</a>
           </button>
         </div>
       </div>
