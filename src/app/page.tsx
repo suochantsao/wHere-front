@@ -1,7 +1,4 @@
 import Header from "@/components/layout/Header";
-import Feature from "@/components/ui/Feature";
-import Step from "@/components/ui/Step";
-import Testimonial from "@/components/ui/Testimonial";
 
 export default function Home() {
   return (
@@ -294,7 +291,7 @@ export default function Home() {
                   <div className="text-sm text-gray-500">數位遊牧族</div>
                 </div>
               </div>
-              <p className="text-gray-600 italic">"終於不用每次換城市都重新買充電器了！wHere 讓我的遊牧生活更有條理。"</p>
+              <p className="text-gray-600 italic">&ldquo;終於不用每次換城市都重新買充電器了！wHere 讓我的遊牧生活更有條理。&rdquo;</p>
             </div>
             
             <div className="bg-white p-8 rounded-2xl shadow-sm">
@@ -305,7 +302,7 @@ export default function Home() {
                   <div className="text-sm text-gray-500">頻繁搬家者</div>
                 </div>
               </div>
-              <p className="text-gray-600 italic">"搬了五次家，每次打包都不再慌亂。知道每樣東西在哪，搬家效率提升超多！"</p>
+              <p className="text-gray-600 italic">&ldquo;搬了五次家，每次打包都不再慌亂。知道每樣東西在哪，搬家效率提升超多！&rdquo;</p>
             </div>
             
             <div className="bg-white p-8 rounded-2xl shadow-sm">
@@ -316,7 +313,7 @@ export default function Home() {
                   <div className="text-sm text-gray-500">共享公寓室友</div>
                 </div>
               </div>
-              <p className="text-gray-600 italic">"和室友分享物品位置超方便，再也不會搞混誰的東西放在哪裡了。"</p>
+              <p className="text-gray-600 italic">&ldquo;和室友分享物品位置超方便，再也不會搞混誰的東西放在哪裡了。&rdquo;</p>
             </div>
           </div>
         </div>
