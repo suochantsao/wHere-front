@@ -21,10 +21,10 @@ export default function Home() {
               <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                 
                 {/* 左側：文字內容 - 整合產品經理 + 文案專家建議 */}
-                <div className="text-center lg:text-left space-y-8 opacity-0 translate-y-8 animate-[fadeInUp_0.8s_ease-out_0.2s_forwards]">
+                <div className="text-center lg:text-left space-y-8">
                   
                   {/* 情感共鳴層：先建立問題認知 */}
-                  <div className="mb-8">
+                  <div className="mb-8 opacity-0 animate-[fadeInUp_0.8s_ease-out_0.1s_forwards]">
                     <p className="text-lg text-gray-500 mb-4 font-light">
                       「搬家時找不到剪刀、買了第三把雨傘、重要文件不知道收在哪⋯⋯」
                     </p>
@@ -32,17 +32,21 @@ export default function Home() {
 
                   {/* 核心價值主張：文案專家推薦版本 */}
                   <div className="space-y-6">
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-gray-900">
-                      別再買重複的東西，<br />
-                      也別再
-                      <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent">
-                        翻遍所有箱子
-                      </span>
+                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-neutral-900">
+                      <div className="opacity-0 animate-slideInLeft [animation-delay:0.3s] [animation-fill-mode:forwards]">
+                        別再買重複的東西，
+                      </div>
+                      <div className="opacity-0 animate-slideInRight [animation-delay:0.6s] [animation-fill-mode:forwards]">
+                        也別再
+                        <span className="bg-gradient-to-r from-primary-200 via-primary-300 to-primary-400 bg-clip-text text-transparent">
+                          翻遍所有箱子
+                        </span>
+                      </div>
                     </h1>
                   </div>
                   
                   {/* 副標語和支撐文案 */}
-                  <div className="space-y-4">
+                  <div className="space-y-4 opacity-0 animate-[fadeInUp_0.8s_ease-out_0.9s_forwards]">
                     <p className="text-xl lg:text-2xl text-gray-700 font-medium">
                       wHere 幫你記住物品的家，讓多地生活更輕鬆一點
                     </p>
@@ -52,51 +56,51 @@ export default function Home() {
                   </div>
                   
                   {/* 行動按鈕 - 溫和 CTA */}
-                  <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-6">
-                    <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 group">
+                  <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-6 opacity-0 animate-[fadeInUp_0.8s_ease-out_1.2s_forwards]">
+                    <button className="bg-primary-200 hover:bg-primary-300 text-white font-semibold px-8 py-4 rounded-xl shadow-warm-sm hover:shadow-warm-md transform hover:scale-105 transition-all duration-300 group min-h-[44px]">
                       免費試試看
                       <svg className="w-5 h-5 ml-2 inline group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                       </svg>
                     </button>
                     
-                    <button className="border-2 border-gray-300 text-gray-700 hover:border-blue-500 hover:text-blue-600 font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:shadow-md">
+                    <button className="border-2 border-neutral-300 text-neutral-700 hover:border-primary-200 hover:text-primary-600 font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:shadow-warm-sm min-h-[44px]">
                       了解怎麼用
                     </button>
                   </div>
                   
                   {/* 信任建立：降低心理門檻 */}
-                  <div className="flex justify-center lg:justify-start items-center gap-8 text-sm text-gray-500 pt-4">
+                  <div className="flex justify-center lg:justify-start items-center gap-8 text-sm text-neutral-500 pt-4 opacity-0 animate-[fadeInUp_0.8s_ease-out_1.5s_forwards]">
                     <div className="flex items-center">
-                      <div className="w-2 h-2 bg-green-400 rounded-full mr-2"></div>
+                      <div className="w-2 h-2 bg-primary-200 rounded-full mr-2"></div>
                       <span>完全免費開始</span>
                     </div>
                     <div className="flex items-center">
-                      <div className="w-2 h-2 bg-green-400 rounded-full mr-2"></div>
+                      <div className="w-2 h-2 bg-primary-200 rounded-full mr-2"></div>
                       <span>隨時可以升級</span>
                     </div>
                     <div className="flex items-center">
-                      <div className="w-2 h-2 bg-green-400 rounded-full mr-2"></div>
+                      <div className="w-2 h-2 bg-primary-200 rounded-full mr-2"></div>
                       <span>跨平台同步</span>
                     </div>
                   </div>
                   
                   {/* 社會證明 */}
-                  <div className="pt-8 border-t border-gray-200">
-                    <p className="text-sm text-gray-500 mb-4">已有超過 500+ 多地生活者信賴使用</p>
+                  <div className="pt-8 border-t border-neutral-200 opacity-0 animate-[fadeInUp_0.8s_ease-out_1.8s_forwards]">
+                    <p className="text-sm text-neutral-500 mb-4">已有超過 500+ 多地生活者信賴使用</p>
                     <div className="flex justify-center lg:justify-start items-center space-x-4">
                       <div className="flex -space-x-2">
                         {[1,2,3,4,5].map((i) => (
-                          <div key={i} className="w-8 h-8 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full border-2 border-white"></div>
+                          <div key={i} className="w-8 h-8 bg-primary-200 rounded-full border-2 border-white shadow-warm-xs"></div>
                         ))}
                       </div>
-                      <div className="flex items-center text-yellow-500">
+                      <div className="flex items-center text-primary-400">
                         {[1,2,3,4,5].map((i) => (
                           <svg key={i} className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                           </svg>
                         ))}
-                        <span className="ml-2 text-sm text-gray-600">4.8/5</span>
+                        <span className="ml-2 text-sm text-neutral-600">4.8/5</span>
                       </div>
                     </div>
                   </div>
@@ -173,31 +177,34 @@ export default function Home() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl lg:text-4xl font-bold text-neutral-900 mb-4">
               為什麼選擇 wHere？
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
               專為多地生活設計的物品追蹤系統，解決真實生活中的實際問題
             </p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 hover:shadow-lg transition-shadow">
+            <div className="text-center p-8 rounded-2xl bg-white border border-neutral-100 hover:shadow-warm-md hover:border-primary-200 transition-all duration-300">
               <div className="text-5xl mb-6">⏱️</div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">省時間</h3>
-              <p className="text-gray-600">不再花時間翻箱倒櫃找東西，一秒定位物品位置</p>
+              <h3 className="text-xl font-semibold text-neutral-900 mb-4">省時間</h3>
+              <p className="text-neutral-600">不再花時間翻箱倒櫃找東西，一秒定位物品位置</p>
             </div>
             
-            <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-green-50 to-green-100 hover:shadow-lg transition-shadow">
+            <div className="text-center p-8 rounded-2xl bg-white border-2 border-primary-200 hover:shadow-warm-md hover:border-primary-300 transition-all duration-300 relative">
+              <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                <span className="bg-primary-200 text-white text-xs px-3 py-1 rounded-full font-medium">推薦</span>
+              </div>
               <div className="text-5xl mb-6">💸</div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">省錢</h3>
-              <p className="text-gray-600">避免重複購買已有物品，每年節省數千元不必要支出</p>
+              <h3 className="text-xl font-semibold text-neutral-900 mb-4">省錢</h3>
+              <p className="text-neutral-600">避免重複購買已有物品，每年節省數千元不必要支出</p>
             </div>
             
-            <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-purple-50 to-purple-100 hover:shadow-lg transition-shadow">
+            <div className="text-center p-8 rounded-2xl bg-white border border-neutral-100 hover:shadow-warm-md hover:border-primary-200 transition-all duration-300">
               <div className="text-5xl mb-6">😌</div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">省心</h3>
-              <p className="text-gray-600">隨時掌握物品位置的安心感，讓多地生活更從容</p>
+              <h3 className="text-xl font-semibold text-neutral-900 mb-4">省心</h3>
+              <p className="text-neutral-600">隨時掌握物品位置的安心感，讓多地生活更從容</p>
             </div>
           </div>
         </div>
@@ -238,82 +245,98 @@ export default function Home() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">簡單三步驟</h2>
-            <p className="text-xl text-gray-600">讓物品追蹤變得像呼吸一樣自然</p>
+            <h2 className="text-3xl lg:text-4xl font-bold text-neutral-900 mb-4">簡單三步驟</h2>
+            <p className="text-xl text-neutral-600">讓物品追蹤變得像呼吸一樣自然</p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-12 relative">
-            <div className="text-center">
+            <div className="text-center relative">
               <div className="relative mb-8">
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto relative z-10">1</div>
-                {/* 連線到下一步 */}
-                <div className="absolute top-8 left-1/2 w-full h-1 bg-gradient-to-r from-purple-500 to-pink-500 hidden md:block transform translate-x-8"></div>
+                <div className="w-20 h-20 bg-primary-200 rounded-full flex items-center justify-center text-white text-3xl font-bold mx-auto relative z-10 shadow-warm-md border-4 border-primary-100">1</div>
+                {/* 箭頭連接到下一步 */}
+                <div className="absolute top-10 left-1/2 w-full h-0 hidden md:block transform translate-x-10 z-0">
+                  <div className="flex items-center justify-center">
+                    <div className="flex-1 h-0.5 bg-gradient-to-r from-primary-200 to-primary-300 opacity-40"></div>
+                    <div className="text-primary-300 mx-2 text-xl">→</div>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold mb-4">建立地點</h3>
-              <p className="text-gray-600">新增你的居住地點：家裡、辦公室、朋友家</p>
+              <div className="bg-white p-6 rounded-xl border border-primary-100 shadow-warm-sm">
+                <h3 className="text-xl font-semibold mb-3 text-neutral-900">建立地點</h3>
+                <p className="text-neutral-600">新增你的居住地點：家裡、辦公室、朋友家</p>
+              </div>
             </div>
             
-            <div className="text-center">
+            <div className="text-center relative">
               <div className="relative mb-8">
-                <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto relative z-10">2</div>
-                {/* 連線到下一步 */}
-                <div className="absolute top-8 left-1/2 w-full h-1 bg-gradient-to-r from-pink-500 to-red-500 hidden md:block transform translate-x-8"></div>
+                <div className="w-20 h-20 bg-primary-300 rounded-full flex items-center justify-center text-white text-3xl font-bold mx-auto relative z-10 shadow-warm-md border-4 border-primary-200">2</div>
+                {/* 箭頭連接到下一步 */}
+                <div className="absolute top-10 left-1/2 w-full h-0 hidden md:block transform translate-x-10 z-0">
+                  <div className="flex items-center justify-center">
+                    <div className="flex-1 h-0.5 bg-gradient-to-r from-primary-300 to-primary-400 opacity-40"></div>
+                    <div className="text-primary-400 mx-2 text-xl">→</div>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold mb-4">記錄物品</h3>
-              <p className="text-gray-600">拍照或輸入物品名稱，選擇存放位置</p>
+              <div className="bg-white p-6 rounded-xl border-2 border-primary-200 shadow-warm-md">
+                <h3 className="text-xl font-semibold mb-3 text-neutral-900">記錄物品</h3>
+                <p className="text-neutral-600">拍照或輸入物品名稱，選擇存放位置</p>
+              </div>
             </div>
             
             <div className="text-center">
               <div className="mb-8">
-                <div className="w-16 h-16 bg-gradient-to-r from-pink-500 to-red-500 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto">3</div>
+                <div className="w-20 h-20 bg-primary-400 rounded-full flex items-center justify-center text-white text-3xl font-bold mx-auto shadow-warm-md border-4 border-primary-300">3</div>
               </div>
-              <h3 className="text-xl font-semibold mb-4">輕鬆找到</h3>
-              <p className="text-gray-600">搜尋任何物品，立即知道確切位置</p>
+              <div className="bg-white p-6 rounded-xl border border-primary-100 shadow-warm-sm">
+                <h3 className="text-xl font-semibold mb-3 text-neutral-900">輕鬆找到</h3>
+                <p className="text-neutral-600">搜尋任何物品，立即知道確切位置</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Testimonials - 真實用戶場景 */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-purple-50">
+      <section className="py-20 bg-gradient-to-br from-neutral-50 to-primary-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">用戶真實分享</h2>
-            <p className="text-xl text-gray-600">看看其他人如何用 wHere 改善生活</p>
+            <h2 className="text-3xl lg:text-4xl font-bold text-neutral-900 mb-4">用戶真實分享</h2>
+            <p className="text-xl text-neutral-600">看看其他人如何用 wHere 改善生活</p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-2xl shadow-sm">
+            <div className="bg-white p-8 rounded-2xl shadow-warm-sm hover:shadow-warm-md transition-shadow duration-300 border border-neutral-100">
               <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold">小</div>
+                <div className="w-12 h-12 bg-primary-200 text-white rounded-full flex items-center justify-center font-bold shadow-warm-sm border-2 border-primary-100">小</div>
                 <div className="ml-4">
-                  <div className="font-semibold">小雯</div>
-                  <div className="text-sm text-gray-500">數位遊牧族</div>
+                  <div className="font-semibold text-neutral-900">小雯</div>
+                  <div className="text-sm text-neutral-500">數位遊牧族</div>
                 </div>
               </div>
-              <p className="text-gray-600 italic">&ldquo;終於不用每次換城市都重新買充電器了！wHere 讓我的遊牧生活更有條理。&rdquo;</p>
+              <p className="text-neutral-600 italic">&ldquo;終於不用每次換城市都重新買充電器了！wHere 讓我的遊牧生活更有條理。&rdquo;</p>
             </div>
             
-            <div className="bg-white p-8 rounded-2xl shadow-sm">
+            <div className="bg-white p-8 rounded-2xl shadow-warm-sm hover:shadow-warm-md transition-shadow duration-300 border border-neutral-100">
               <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center text-white font-bold">阿</div>
+                <div className="w-12 h-12 bg-primary-300 text-white rounded-full flex items-center justify-center font-bold shadow-warm-sm border-2 border-primary-200">阿</div>
                 <div className="ml-4">
-                  <div className="font-semibold">阿凱</div>
-                  <div className="text-sm text-gray-500">頻繁搬家者</div>
+                  <div className="font-semibold text-neutral-900">阿凱</div>
+                  <div className="text-sm text-neutral-500">頻繁搬家者</div>
                 </div>
               </div>
-              <p className="text-gray-600 italic">&ldquo;搬了五次家，每次打包都不再慌亂。知道每樣東西在哪，搬家效率提升超多！&rdquo;</p>
+              <p className="text-neutral-600 italic">&ldquo;搬了五次家，每次打包都不再慌亂。知道每樣東西在哪，搬家效率提升超多！&rdquo;</p>
             </div>
             
-            <div className="bg-white p-8 rounded-2xl shadow-sm">
+            <div className="bg-white p-8 rounded-2xl shadow-warm-sm hover:shadow-warm-md transition-shadow duration-300 border border-neutral-100">
               <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold">美</div>
+                <div className="w-12 h-12 bg-primary-400 text-white rounded-full flex items-center justify-center font-bold shadow-warm-sm border-2 border-primary-300">美</div>
                 <div className="ml-4">
-                  <div className="font-semibold">美玲</div>
-                  <div className="text-sm text-gray-500">共享公寓室友</div>
+                  <div className="font-semibold text-neutral-900">美玲</div>
+                  <div className="text-sm text-neutral-500">共享公寓室友</div>
                 </div>
               </div>
-              <p className="text-gray-600 italic">&ldquo;和室友分享物品位置超方便，再也不會搞混誰的東西放在哪裡了。&rdquo;</p>
+              <p className="text-neutral-600 italic">&ldquo;和室友分享物品位置超方便，再也不會搞混誰的東西放在哪裡了。&rdquo;</p>
             </div>
           </div>
         </div>

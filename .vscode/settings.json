@@ -1,11 +1,11 @@
 {
     // ***************************************************
-    // 以下設定適用於 User Settings 或 Workspace Settings
+    // The following settings apply to User Settings or Workspace Settings
     // ***************************************************
     "window.commandCenter": true,
     "chat.commandCenter.enabled": true,
 
-    // 目前 gpt-4o-copilot 已經是預設值，但明確設定可確保一致性
+    // Currently gpt-4o-copilot is the default value, but explicit settings ensure consistency
     "github.copilot.selectedCompletionModel": "gpt-4o-copilot",
     "github.copilot.editor.enableCodeActions": true,
     "github.copilot.renameSuggestions.triggerAutomatically": true,
@@ -26,16 +26,16 @@
     },
     "github.copilot.chat.languageContext.typescript.enabled": true,
     "github.copilot.chat.agent.thinkingTool": true,
-    // GitHub Copilot Chat - 內嵌聊天 (Inline Chat)
+    // GitHub Copilot Chat - Inline Chat
     "github.copilot.chat.editor.temporalContext.enabled": true,
     "inlineChat.holdToSpeech": true,
     "inlineChat.finishOnType": false,
-    // GitHub Copilot Chat - 偵錯相關設定
+    // GitHub Copilot Chat - Debugging related settings
     "github.copilot.chat.startDebugging.enabled": true,
     "github.copilot.chat.reviewSelection.enabled": true,
     "github.copilot.chat.copilotDebugCommand.enabled": true,
     "github.copilot.chat.edits.temporalContext.enabled": false,
-    // GitHub Copilot Chat - 測試相關設定
+    // GitHub Copilot Chat - Testing related settings
     "github.copilot.chat.setupTests.enabled": true,
     "github.copilot.chat.generateTests.codeLens": true,
     "github.copilot.chat.testGeneration.instructions": [
@@ -46,7 +46,7 @@
             "text": "Always try uniting related tests in a suite."
         }
     ],
-    // GitHub Copilot Chat - 自訂提示
+    // GitHub Copilot Chat - Custom prompts
     "github.copilot.chat.codeGeneration.useInstructionFiles": true,
     "github.copilot.chat.codeGeneration.instructions": [
         {
@@ -67,7 +67,7 @@
             "file": ".copilot-review-instructions.md"
         }
     ],
-    // GitHub Copilot Chat - 自訂 Git Commit 訊息提示
+    // GitHub Copilot Chat - Custom Git Commit message prompts
     "github.copilot.chat.commitMessageGeneration.instructions": [
         {
             "text": "# Use Conventional Commits 1.0.0 for commit messages."
@@ -79,7 +79,7 @@
             "file": ".github/instructions/copilot-commit-message-instructions.md"
         }
     ],
-    // GitHub Copilot Chat - 自訂 Pull Request 描述提示
+    // GitHub Copilot Chat - Custom Pull Request description prompts
     "github.copilot.chat.pullRequestDescriptionGeneration.instructions": [
         {
             "text": "請一律使用正體中文來撰寫記錄"
@@ -98,7 +98,7 @@
     "github.copilot.chat.agent.runTasks": true,
     "github.copilot.chat.codesearch.enabled": true,
     "github.copilot.chat.newWorkspaceCreation.enabled": true,
-    "terminal.integrated.scrollback": 50000, // Agent Mode 建議調高預設 Terminal 的捲軸行數
+    "terminal.integrated.scrollback": 50000, // Agent Mode recommends increasing default Terminal scroll buffer
 
     "chat.mcp.enabled": true,
     "chat.mcp.discovery.enabled": false,
@@ -116,7 +116,7 @@
     // Accessibility
     "accessibility.voice.speechLanguage": "zh-TW",
     "accessibility.voice.autoSynthesize": "off",
-    // accessibility.voice.keywordActivation 預設為 off，習慣用語音輸入可以改為 chatInContext
+    // accessibility.voice.keywordActivation defaults to off, can be changed to chatInContext for voice input users
     // "accessibility.voice.keywordActivation": "chatInContext",
     "accessibility.voice.speechTimeout": 10000,
     "accessibility.voice.ignoreCodeBlocks": true,

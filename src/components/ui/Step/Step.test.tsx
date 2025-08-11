@@ -9,17 +9,17 @@ describe('Step', () => {
     title: '第一步驟'
   };
 
-  it('應該正確渲染 Step 元件', () => {
+  it('should render Step component correctly', () => {
     render(<Step {...mockProps} />);
     
     expect(screen.getByText(mockProps.number)).toBeInTheDocument();
     expect(screen.getByText(mockProps.title)).toBeInTheDocument();
   });
 
-  it('數字應該顯示在圓形容器中', () => {
+  it('number should be displayed in circular container', () => {
     const { container } = render(<Step {...mockProps} />);
     
-    // 直接查找數字容器
+    // Directly find the number container
     const numberContainer = container.querySelector('.w-10.h-10.rounded-full');
     
     expect(numberContainer).toBeInTheDocument();
@@ -38,32 +38,32 @@ describe('Step', () => {
     expect(numberContainer).toHaveTextContent(mockProps.number);
   });
 
-  it('標題應該有正確的樣式', () => {
+  it('title should have correct styles', () => {
     render(<Step {...mockProps} />);
     
     const title = screen.getByText(mockProps.title);
     expect(title).toHaveClass('text-sm', 'font-medium');
   });
 
-  it('容器應該有居中對齊的樣式', () => {
+  it('container should have center-aligned styles', () => {
     const { container } = render(<Step {...mockProps} />);
     
     const stepContainer = container.firstElementChild;
     expect(stepContainer).toHaveClass('text-center');
   });
 
-  it('應該正確處理不同的步驟編號', () => {
+  it('should correctly handle different step numbers', () => {
     const steps = ['1', '2', '3', '10', 'A', 'B'];
     
     steps.forEach(number => {
-      const { rerender } = render(<Step number={number} title="測試步驟" />);
+      const { rerender } = render(<Step number={number} title="Test Step" />);
       expect(screen.getByText(number)).toBeInTheDocument();
       rerender(<div />);
     });
   });
 
-  it('應該正確處理長標題', () => {
-    const longTitle = '這是一個非常非常長的步驟標題，用來測試元件是否能正確處理長文字內容';
+  it('should correctly handle long titles', () => {
+    const longTitle = 'This is a very very long step title used to test whether the component can correctly handle long text content';
     
     render(<Step number="1" title={longTitle} />);
     
@@ -71,7 +71,7 @@ describe('Step', () => {
     expect(screen.getByText(longTitle)).toHaveClass('text-sm', 'font-medium');
   });
 
-  it('應該正確處理空的標題', () => {
+  it('should correctly handle empty titles', () => {
     const { container } = render(<Step number="1" title="" />);
     
     const titleElement = container.querySelector('p.text-sm.font-medium');
@@ -79,25 +79,25 @@ describe('Step', () => {
     expect(titleElement).toHaveTextContent('');
   });
 
-  it('應該正確處理特殊字符在編號中', () => {
+  it('should correctly handle special characters in numbers', () => {
     const specialNumbers = ['①', '★', '✓', '→'];
     
     specialNumbers.forEach(number => {
-      const { rerender } = render(<Step number={number} title="測試步驟" />);
+      const { rerender } = render(<Step number={number} title="Test Step" />);
       expect(screen.getByText(number)).toBeInTheDocument();
       rerender(<div />);
     });
   });
 
-  it('應該正確處理特殊字符在標題中', () => {
-    const specialTitle = '步驟 & 流程 <測試>';
+  it('should correctly handle special characters in titles', () => {
+    const specialTitle = 'Step & Process <Test>';
     
     render(<Step number="1" title={specialTitle} />);
     
     expect(screen.getByText(specialTitle)).toBeInTheDocument();
   });
 
-  it('數字容器應該是可讀的', () => {
+  it('number container should be readable', () => {
     const { container } = render(<Step {...mockProps} />);
     
     const numberContainer = container.querySelector('.w-10.h-10.rounded-full');
@@ -106,12 +106,12 @@ describe('Step', () => {
     expect(numberContainer).toHaveClass('flex', 'items-center', 'justify-center');
   });
 
-  it('應該正確處理多行標題', () => {
-    const multiLineTitle = '第一行標題\n第二行標題';
+  it('should correctly handle multi-line titles', () => {
+    const multiLineTitle = 'First line title\nSecond line title';
     
     render(<Step number="1" title={multiLineTitle} />);
     
-    // 使用正則表達式匹配多行文字
-    expect(screen.getByText(/第一行標題/)).toBeInTheDocument();
+    // Use regular expression to match multi-line text
+    expect(screen.getByText(/First line title/)).toBeInTheDocument();
   });
 });

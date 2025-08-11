@@ -35,11 +35,11 @@ export default function Header() {
             關於我們
           </a>
         </nav>
-        <div className="space-x-2">
-          <button className="text-sm px-3 py-1 border rounded">
+        <div className="flex items-center space-x-3">
+          <button className="text-sm px-6 py-2 border-2 border-gray-300 text-gray-700 rounded-full hover:border-[#DAC9A6] hover:text-[#DAC9A6] transition-all duration-300 font-medium">
             <a href="/login">登入</a>
           </button>
-          <button className="text-sm px-3 py-1 bg-gray-800 text-white rounded">
+          <button className="text-sm px-6 py-2 bg-[#DAC9A6] text-white rounded-full hover:bg-[#D4C49E] transition-all duration-300 font-medium shadow-sm hover:shadow-md">
             <a href="/register">註冊</a>
           </button>
         </div>

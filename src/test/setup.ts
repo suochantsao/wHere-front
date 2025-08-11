@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { vi } from 'vitest';
 
-// 設定測試環境的全域配置
+// Set up global configuration for test environment
 global.ResizeObserver = class ResizeObserver {
   observe() {}
   unobserve() {}
@@ -50,7 +50,7 @@ vi.mock('next/navigation', () => ({
   },
 }));
 
-// 設定 window.matchMedia
+// Set up window.matchMedia
 Object.defineProperty(window, 'matchMedia', {
   writable: true,
   value: vi.fn().mockImplementation(query => ({

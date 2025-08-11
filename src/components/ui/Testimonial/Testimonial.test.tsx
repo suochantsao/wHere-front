@@ -10,7 +10,7 @@ describe('Testimonial', () => {
     quote: '這個產品真的很棒，大大提升了我們的工作效率！'
   };
 
-  it('應該正確渲染 Testimonial 元件', () => {
+  it('should render Testimonial component correctly', () => {
     render(<Testimonial {...mockProps} />);
     
     expect(screen.getByText(mockProps.name)).toBeInTheDocument();
@@ -18,28 +18,28 @@ describe('Testimonial', () => {
     expect(screen.getByText(mockProps.quote)).toBeInTheDocument();
   });
 
-  it('推薦語應該有正確的樣式和位置', () => {
+  it('testimonial quote should have correct styles and position', () => {
     render(<Testimonial {...mockProps} />);
     
     const quote = screen.getByText(mockProps.quote);
     expect(quote).toHaveClass('mb-2');
   });
 
-  it('姓名應該有粗體樣式', () => {
+  it('name should have bold style', () => {
     render(<Testimonial {...mockProps} />);
     
     const name = screen.getByText(mockProps.name);
     expect(name).toHaveClass('font-semibold');
   });
 
-  it('職位應該有灰色文字樣式', () => {
+  it('role should have gray text style', () => {
     render(<Testimonial {...mockProps} />);
     
     const role = screen.getByText(mockProps.role);
     expect(role).toHaveClass('text-gray-500');
   });
 
-  it('容器應該有正確的背景和佈局樣式', () => {
+  it('container should have correct background and layout styles', () => {
     const { container } = render(<Testimonial {...mockProps} />);
     
     const testimonialContainer = container.firstElementChild;
@@ -52,7 +52,7 @@ describe('Testimonial', () => {
     );
   });
 
-  it('應該正確處理長推薦語', () => {
+  it('should correctly handle long testimonial quotes', () => {
     const longQuote = '這是一個非常詳細和長的推薦語，描述了產品如何改變了我們的工作流程，提升效率，並且帶來了極佳的用戶體驗。我們團隊所有成員都對這個產品讚不絕口，強烈推薦給其他團隊使用。';
     
     render(<Testimonial name={mockProps.name} role={mockProps.role} quote={longQuote} />);
@@ -61,7 +61,7 @@ describe('Testimonial', () => {
     expect(screen.getByText(longQuote)).toHaveClass('mb-2');
   });
 
-  it('應該正確處理空的推薦語', () => {
+  it('should correctly handle empty testimonial quotes', () => {
     const { container } = render(<Testimonial name={mockProps.name} role={mockProps.role} quote="" />);
     
     const quoteElement = container.querySelector('p.mb-2');
@@ -69,7 +69,7 @@ describe('Testimonial', () => {
     expect(quoteElement).toHaveTextContent('');
   });
 
-  it('應該正確處理特殊字符', () => {
+  it('should correctly handle special characters', () => {
     const specialProps = {
       name: '李 & 王',
       role: 'UI/UX 設計師',
@@ -83,7 +83,7 @@ describe('Testimonial', () => {
     expect(screen.getByText(specialProps.quote)).toBeInTheDocument();
   });
 
-  it('元素順序應該正確 (推薦語 -> 姓名 -> 職位)', () => {
+  it('element order should be correct (quote -> name -> role)', () => {
     const { container } = render(<Testimonial {...mockProps} />);
     
     const elements = container.querySelectorAll('p');
@@ -94,7 +94,7 @@ describe('Testimonial', () => {
     expect(elements[2]).toHaveTextContent(mockProps.role);
   });
 
-  it('應該正確處理包含引號的推薦語', () => {
+  it('should correctly handle testimonial quotes with quotation marks', () => {
     const quoteWithQuotes = '"這個產品真的很棒！" 這是我的真心話。';
     
     render(<Testimonial name={mockProps.name} role={mockProps.role} quote={quoteWithQuotes} />);
@@ -102,16 +102,16 @@ describe('Testimonial', () => {
     expect(screen.getByText(quoteWithQuotes)).toBeInTheDocument();
   });
 
-  it('應該正確處理多行推薦語', () => {
+  it('should correctly handle multi-line testimonial quotes', () => {
     const multiLineQuote = '第一行推薦語\n第二行推薦語\n第三行推薦語';
     
     render(<Testimonial name={mockProps.name} role={mockProps.role} quote={multiLineQuote} />);
     
-    // 使用正則表達式匹配多行文字
+    // Use regular expression to match multi-line text
     expect(screen.getByText(/第一行推薦語/)).toBeInTheDocument();
   });
 
-  it('應該正確處理包含數字和符號的資料', () => {
+  it('should correctly handle data with numbers and symbols', () => {
     const numericProps = {
       name: '張三 123',
       role: 'CEO & 創辦人',

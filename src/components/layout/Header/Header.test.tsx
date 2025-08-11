@@ -18,7 +18,7 @@ describe('Header', () => {
     vi.restoreAllMocks();
   });
 
-  it('應該正確渲染 Header 元件', () => {
+  it('should render Header component correctly', () => {
     render(<Header />);
     
     expect(screen.getByRole('banner')).toBeInTheDocument();
@@ -30,7 +30,7 @@ describe('Header', () => {
     expect(screen.getByText('註冊')).toBeInTheDocument();
   });
 
-  it('初始狀態應該有正確的 CSS 類別', () => {
+  it('should have correct CSS classes in initial state', () => {
     render(<Header />);
     
     const header = screen.getByRole('banner');
@@ -40,19 +40,19 @@ describe('Header', () => {
     expect(headerContent).toHaveClass('h-[90px]', 'px-[45px]', 'mx-[5vw]', 'rounded-[100px]');
   });
 
-  it('當頁面滾動時應該改變樣式', () => {
-    // 測試滾動監聽器是否正確設置
+  it('should change styles when page scrolls', () => {
+    // Test if scroll listener is set up correctly
     render(<Header />);
     
     expect(window.addEventListener).toHaveBeenCalledWith('scroll', expect.any(Function));
     
-    // 注意：在實際應用中，滾動會觸發狀態更新，但在單元測試中
-    // 我們主要驗證事件監聽器是否正確設置
+    // Note: In actual applications, scrolling triggers state updates, but in unit tests
+    // we mainly verify that event listeners are set up correctly
     const header = screen.getByRole('banner');
     expect(header).toBeInTheDocument();
   });
 
-  it('當頁面回到頂部時應該恢復原始樣式', () => {
+  it('should restore original styles when page returns to top', () => {
     render(<Header />);
     
     const scrollHandler = vi.mocked(window.addEventListener).mock.calls.find(
@@ -75,7 +75,7 @@ describe('Header', () => {
     expect(headerContent).toHaveClass('h-[90px]', 'px-[45px]', 'mx-[5vw]', 'rounded-[100px]');
   });
 
-  it('導航連結應該有正確的 href 屬性', () => {
+  it('navigation links should have correct href attributes', () => {
     render(<Header />);
     
     const aboutLink = screen.getByRole('link', { name: '關於我們' });
@@ -88,7 +88,7 @@ describe('Header', () => {
     expect(registerLink).toHaveAttribute('href', '/register');
   });
 
-  it('hover 效果應該正確套用', () => {
+  it('hover effects should be applied correctly', () => {
     render(<Header />);
     
     const productLink = screen.getByText('產品介紹');
@@ -100,7 +100,7 @@ describe('Header', () => {
     expect(aboutLink).toHaveClass('hover:text-[#DAC9A6]');
   });
 
-  it('元件卸載時應該移除事件監聽器', () => {
+  it('should remove event listeners when component unmounts', () => {
     const { unmount } = render(<Header />);
     
     unmount();
